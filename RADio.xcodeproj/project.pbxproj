@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48108BD9212D9319008E1968 /* ArtistResultsJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 48108BD8212D9319008E1968 /* ArtistResultsJSON.json */; };
+		483E29E6212AF71100D6B22B /* JSONMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E29E5212AF71100D6B22B /* JSONMappingTests.swift */; };
+		48511065212E9D8000311309 /* ResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48511064212E9D8000311309 /* ResultsCell.xib */; };
+		48511069212EA0D800311309 /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48511068212EA0D800311309 /* ResultsCell.swift */; };
 		48D90155211F0097000473EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D90154211F0097000473EC /* AppDelegate.swift */; };
 		48D90157211F0097000473EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D90156211F0097000473EC /* ViewController.swift */; };
 		48D9015A211F0097000473EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D90158211F0097000473EC /* Main.storyboard */; };
@@ -14,6 +18,11 @@
 		48D9015F211F0097000473EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D9015D211F0097000473EC /* LaunchScreen.storyboard */; };
 		48D9016A211F0097000473EC /* RADioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D90169211F0097000473EC /* RADioTests.swift */; };
 		48D90175211F0097000473EC /* RADioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D90174211F0097000473EC /* RADioUITests.swift */; };
+		48D90184211FCEBD000473EC /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D90183211FCEBD000473EC /* Results.swift */; };
+		48D90187211FD899000473EC /* APIRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D90186211FD899000473EC /* APIRequests.swift */; };
+		4B4AB095DC6BBAD2C8C6A506 /* Pods_RADioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696CF86255733C7287369D18 /* Pods_RADioUITests.framework */; };
+		7859C379D286855A6E4EF67B /* Pods_RADio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93ECC0BBBD614D668E2002BB /* Pods_RADio.framework */; };
+		C9DC8544AAE3F224A5BDD23F /* Pods_RADioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB9D3B34FBE349E73312086 /* Pods_RADioTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DB9D3B34FBE349E73312086 /* Pods_RADioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RADioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36B2197FA595F6626B4C4297 /* Pods-RADioUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RADioUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RADioUITests/Pods-RADioUITests.release.xcconfig"; sourceTree = "<group>"; };
+		48108BD8212D9319008E1968 /* ArtistResultsJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ArtistResultsJSON.json; sourceTree = "<group>"; };
+		483E29E5212AF71100D6B22B /* JSONMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMappingTests.swift; sourceTree = "<group>"; };
+		48511064212E9D8000311309 /* ResultsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsCell.xib; sourceTree = "<group>"; };
+		48511068212EA0D800311309 /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 		48D90151211F0097000473EC /* RADio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RADio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D90154211F0097000473EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48D90156211F0097000473EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +62,15 @@
 		48D90170211F0097000473EC /* RADioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RADioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D90174211F0097000473EC /* RADioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RADioUITests.swift; sourceTree = "<group>"; };
 		48D90176211F0097000473EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48D90183211FCEBD000473EC /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		48D90186211FD899000473EC /* APIRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIRequests.swift; path = RADio/Requests/APIRequests.swift; sourceTree = SOURCE_ROOT; };
+		696CF86255733C7287369D18 /* Pods_RADioUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RADioUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F8842738F65FB09E886FA19 /* Pods-RADio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RADio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RADio/Pods-RADio.debug.xcconfig"; sourceTree = "<group>"; };
+		853B453CBB07C29758522AD7 /* Pods-RADioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RADioUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RADioUITests/Pods-RADioUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		91E249989A909E17999ADCEE /* Pods-RADioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RADioTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RADioTests/Pods-RADioTests.debug.xcconfig"; sourceTree = "<group>"; };
+		93ECC0BBBD614D668E2002BB /* Pods_RADio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RADio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBB210C25D23C10E98273A79 /* Pods-RADio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RADio.release.xcconfig"; path = "Pods/Target Support Files/Pods-RADio/Pods-RADio.release.xcconfig"; sourceTree = "<group>"; };
+		E6B0729B71A96ADE23437CEC /* Pods-RADioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RADioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RADioTests/Pods-RADioTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7859C379D286855A6E4EF67B /* Pods_RADio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9DC8544AAE3F224A5BDD23F /* Pods_RADioTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +94,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4AB095DC6BBAD2C8C6A506 /* Pods_RADioUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0359545699CAC6B60D60728F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93ECC0BBBD614D668E2002BB /* Pods_RADio.framework */,
+				1DB9D3B34FBE349E73312086 /* Pods_RADioTests.framework */,
+				696CF86255733C7287369D18 /* Pods_RADioUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48511063212E9D1000311309 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48511064212E9D8000311309 /* ResultsCell.xib */,
+				48511068212EA0D800311309 /* ResultsCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		48D90148211F0097000473EC = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +127,8 @@
 				48D90168211F0097000473EC /* RADioTests */,
 				48D90173211F0097000473EC /* RADioUITests */,
 				48D90152211F0097000473EC /* Products */,
+				9A34BEF51AE8BCED46C6DA1D /* Pods */,
+				0359545699CAC6B60D60728F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +145,9 @@
 		48D90153211F0097000473EC /* RADio */ = {
 			isa = PBXGroup;
 			children = (
+				48511063212E9D1000311309 /* Views */,
+				48D90185211FD74E000473EC /* Services */,
+				48D90182211FCBC2000473EC /* Entities */,
 				48D90154211F0097000473EC /* AppDelegate.swift */,
 				48D90156211F0097000473EC /* ViewController.swift */,
 				48D90158211F0097000473EC /* Main.storyboard */,
@@ -111,7 +162,9 @@
 			isa = PBXGroup;
 			children = (
 				48D90169211F0097000473EC /* RADioTests.swift */,
+				483E29E5212AF71100D6B22B /* JSONMappingTests.swift */,
 				48D9016B211F0097000473EC /* Info.plist */,
+				48108BD8212D9319008E1968 /* ArtistResultsJSON.json */,
 			);
 			path = RADioTests;
 			sourceTree = "<group>";
@@ -125,6 +178,35 @@
 			path = RADioUITests;
 			sourceTree = "<group>";
 		};
+		48D90182211FCBC2000473EC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				48D90183211FCEBD000473EC /* Results.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		48D90185211FD74E000473EC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				48D90186211FD899000473EC /* APIRequests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9A34BEF51AE8BCED46C6DA1D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F8842738F65FB09E886FA19 /* Pods-RADio.debug.xcconfig */,
+				CBB210C25D23C10E98273A79 /* Pods-RADio.release.xcconfig */,
+				91E249989A909E17999ADCEE /* Pods-RADioTests.debug.xcconfig */,
+				E6B0729B71A96ADE23437CEC /* Pods-RADioTests.release.xcconfig */,
+				853B453CBB07C29758522AD7 /* Pods-RADioUITests.debug.xcconfig */,
+				36B2197FA595F6626B4C4297 /* Pods-RADioUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48D90179211F0097000473EC /* Build configuration list for PBXNativeTarget "RADio" */;
 			buildPhases = (
+				25122F8F5E3F526E8F639CB9 /* [CP] Check Pods Manifest.lock */,
 				48D9014D211F0097000473EC /* Sources */,
 				48D9014E211F0097000473EC /* Frameworks */,
 				48D9014F211F0097000473EC /* Resources */,
+				771A9A7D9028BE822C2B0A6E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +233,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48D9017C211F0097000473EC /* Build configuration list for PBXNativeTarget "RADioTests" */;
 			buildPhases = (
+				C6A81173235ABDA8E419098F /* [CP] Check Pods Manifest.lock */,
 				48D90161211F0097000473EC /* Sources */,
 				48D90162211F0097000473EC /* Frameworks */,
 				48D90163211F0097000473EC /* Resources */,
@@ -167,6 +252,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48D9017F211F0097000473EC /* Build configuration list for PBXNativeTarget "RADioUITests" */;
 			buildPhases = (
+				04A07306E934B2C0194A3A5F /* [CP] Check Pods Manifest.lock */,
 				48D9016C211F0097000473EC /* Sources */,
 				48D9016D211F0097000473EC /* Frameworks */,
 				48D9016E211F0097000473EC /* Resources */,
@@ -234,6 +320,7 @@
 			files = (
 				48D9015F211F0097000473EC /* LaunchScreen.storyboard in Resources */,
 				48D9015C211F0097000473EC /* Assets.xcassets in Resources */,
+				48511065212E9D8000311309 /* ResultsCell.xib in Resources */,
 				48D9015A211F0097000473EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48108BD9212D9319008E1968 /* ArtistResultsJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,13 +342,107 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		04A07306E934B2C0194A3A5F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RADioUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25122F8F5E3F526E8F639CB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RADio-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		771A9A7D9028BE822C2B0A6E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RADio/Pods-RADio-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/moa/moa.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/moa.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RADio/Pods-RADio-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6A81173235ABDA8E419098F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RADioTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		48D9014D211F0097000473EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48D90184211FCEBD000473EC /* Results.swift in Sources */,
 				48D90157211F0097000473EC /* ViewController.swift in Sources */,
+				48D90187211FD899000473EC /* APIRequests.swift in Sources */,
 				48D90155211F0097000473EC /* AppDelegate.swift in Sources */,
+				48511069212EA0D800311309 /* ResultsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				483E29E6212AF71100D6B22B /* JSONMappingTests.swift in Sources */,
 				48D9016A211F0097000473EC /* RADioTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +607,7 @@
 		};
 		48D9017A211F0097000473EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F8842738F65FB09E886FA19 /* Pods-RADio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -439,6 +623,7 @@
 		};
 		48D9017B211F0097000473EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBB210C25D23C10E98273A79 /* Pods-RADio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +639,7 @@
 		};
 		48D9017D211F0097000473EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91E249989A909E17999ADCEE /* Pods-RADioTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +657,7 @@
 		};
 		48D9017E211F0097000473EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6B0729B71A96ADE23437CEC /* Pods-RADioTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +675,7 @@
 		};
 		48D90180211F0097000473EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 853B453CBB07C29758522AD7 /* Pods-RADioUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -504,6 +692,7 @@
 		};
 		48D90181211F0097000473EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36B2197FA595F6626B4C4297 /* Pods-RADioUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
