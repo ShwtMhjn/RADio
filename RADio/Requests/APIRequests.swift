@@ -9,7 +9,7 @@
 import Foundation
 
 protocol APIRequests {
-    func getSearchResults(for searchString: String, searchMethod: String, completion: ((Response<SearchResponse>) -> Void)?)
+    func getSearchResults(for request: URLRequest, completion: ((Response<SearchResponse>) -> Void)?)
 }
 
 enum Response<Value> {
@@ -18,25 +18,7 @@ enum Response<Value> {
 }
 
 extension APIRequests {
-    func getSearchResults(for searchString: String, searchMethod: String, completion: ((Response<SearchResponse>) -> Void)?) {
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "ws.audioscrobbler.com"
-        urlComponents.path = "/2.0/"
-
-        var queryItems = [URLQueryItem(name: "method", value: "\(searchMethod).search")]
-        queryItems.append(URLQueryItem(name: "\(searchMethod)", value: "\(searchString)"))
-        queryItems.append(URLQueryItem(name: "api_key", value: "1781e9f5a7307fbbc5a60d0545bf2bd8"))
-        queryItems.append(URLQueryItem(name: "format", value: "json"))
-
-        urlComponents.queryItems = queryItems
-
-        guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
-        print("URL: \(url)")
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-
+    func getSearchResults(for request: URLRequest, completion: ((Response<SearchResponse>) -> Void)?) {
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         let task = session.dataTask(with: request) { (responseData, response, responseError) in
@@ -62,8 +44,29 @@ extension APIRequests {
                 }
             }
         }
-
         task.resume()
+    }
+
+    func searchRequest(searchString: String, searchMethod: String)->URLRequest {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "ws.audioscrobbler.com"
+        urlComponents.path = "/2.0/"
+
+        var queryItems = [URLQueryItem(name: "method", value: "\(searchMethod).search")]
+        queryItems.append(URLQueryItem(name: "\(searchMethod)", value: "\(searchString)"))
+        queryItems.append(URLQueryItem(name: "api_key", value: "1781e9f5a7307fbbc5a60d0545bf2bd8"))
+        queryItems.append(URLQueryItem(name: "format", value: "json"))
+
+        urlComponents.queryItems = queryItems
+
+        guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
+        print("URL: \(url)")
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+
+        return request
     }
 }
 

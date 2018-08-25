@@ -7,10 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480DFB7E212F481000245479 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480DFB7D212F481000245479 /* DetailViewController.swift */; };
+		480DFB80212FDCB700245479 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480DFB7F212FDCB700245479 /* Details.swift */; };
 		48108BD9212D9319008E1968 /* ArtistResultsJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 48108BD8212D9319008E1968 /* ArtistResultsJSON.json */; };
 		483E29E6212AF71100D6B22B /* JSONMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E29E5212AF71100D6B22B /* JSONMappingTests.swift */; };
 		48511065212E9D8000311309 /* ResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48511064212E9D8000311309 /* ResultsCell.xib */; };
 		48511069212EA0D800311309 /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48511068212EA0D800311309 /* ResultsCell.swift */; };
+		48CC3B232131652F007A2338 /* ResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC3B222131652F007A2338 /* ResultsModel.swift */; };
+		48CC3B25213166BE007A2338 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC3B24213166BE007A2338 /* Image.swift */; };
+		48CC3B27213166E0007A2338 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC3B26213166E0007A2338 /* Artist.swift */; };
+		48CC3B292131670D007A2338 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC3B282131670D007A2338 /* Stats.swift */; };
+		48CC3B2B2131674A007A2338 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC3B2A2131674A007A2338 /* SearchResponse.swift */; };
+		48CC3B2D21316782007A2338 /* Bio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC3B2C21316782007A2338 /* Bio.swift */; };
+		48CC3B2F213167C6007A2338 /* ArtistMatches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC3B2E213167C6007A2338 /* ArtistMatches.swift */; };
 		48D90155211F0097000473EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D90154211F0097000473EC /* AppDelegate.swift */; };
 		48D90157211F0097000473EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D90156211F0097000473EC /* ViewController.swift */; };
 		48D9015A211F0097000473EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D90158211F0097000473EC /* Main.storyboard */; };
@@ -45,10 +54,19 @@
 /* Begin PBXFileReference section */
 		1DB9D3B34FBE349E73312086 /* Pods_RADioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RADioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B2197FA595F6626B4C4297 /* Pods-RADioUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RADioUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RADioUITests/Pods-RADioUITests.release.xcconfig"; sourceTree = "<group>"; };
+		480DFB7D212F481000245479 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		480DFB7F212FDCB700245479 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		48108BD8212D9319008E1968 /* ArtistResultsJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ArtistResultsJSON.json; sourceTree = "<group>"; };
 		483E29E5212AF71100D6B22B /* JSONMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMappingTests.swift; sourceTree = "<group>"; };
 		48511064212E9D8000311309 /* ResultsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsCell.xib; sourceTree = "<group>"; };
 		48511068212EA0D800311309 /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
+		48CC3B222131652F007A2338 /* ResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsModel.swift; sourceTree = "<group>"; };
+		48CC3B24213166BE007A2338 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		48CC3B26213166E0007A2338 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		48CC3B282131670D007A2338 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		48CC3B2A2131674A007A2338 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		48CC3B2C21316782007A2338 /* Bio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bio.swift; sourceTree = "<group>"; };
+		48CC3B2E213167C6007A2338 /* ArtistMatches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistMatches.swift; sourceTree = "<group>"; };
 		48D90151211F0097000473EC /* RADio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RADio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D90154211F0097000473EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48D90156211F0097000473EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +138,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		48CC3B2121316510007A2338 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				48CC3B222131652F007A2338 /* ResultsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		48D90148211F0097000473EC = {
 			isa = PBXGroup;
 			children = (
@@ -145,11 +171,13 @@
 		48D90153211F0097000473EC /* RADio */ = {
 			isa = PBXGroup;
 			children = (
+				48CC3B2121316510007A2338 /* Models */,
 				48511063212E9D1000311309 /* Views */,
 				48D90185211FD74E000473EC /* Services */,
 				48D90182211FCBC2000473EC /* Entities */,
 				48D90154211F0097000473EC /* AppDelegate.swift */,
 				48D90156211F0097000473EC /* ViewController.swift */,
+				480DFB7D212F481000245479 /* DetailViewController.swift */,
 				48D90158211F0097000473EC /* Main.storyboard */,
 				48D9015B211F0097000473EC /* Assets.xcassets */,
 				48D9015D211F0097000473EC /* LaunchScreen.storyboard */,
@@ -182,6 +210,13 @@
 			isa = PBXGroup;
 			children = (
 				48D90183211FCEBD000473EC /* Results.swift */,
+				48CC3B2E213167C6007A2338 /* ArtistMatches.swift */,
+				48CC3B2A2131674A007A2338 /* SearchResponse.swift */,
+				48CC3B282131670D007A2338 /* Stats.swift */,
+				48CC3B26213166E0007A2338 /* Artist.swift */,
+				48CC3B24213166BE007A2338 /* Image.swift */,
+				480DFB7F212FDCB700245479 /* Details.swift */,
+				48CC3B2C21316782007A2338 /* Bio.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -348,15 +383,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-RADioUITests-checkManifestLockResult.txt",
 			);
@@ -370,15 +401,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-RADio-checkManifestLockResult.txt",
 			);
@@ -392,16 +419,14 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RADio/Pods-RADio-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/moa/moa.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/moa.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,15 +439,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-RADioTests-checkManifestLockResult.txt",
 			);
@@ -438,11 +459,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48CC3B232131652F007A2338 /* ResultsModel.swift in Sources */,
+				48CC3B292131670D007A2338 /* Stats.swift in Sources */,
+				48CC3B25213166BE007A2338 /* Image.swift in Sources */,
 				48D90184211FCEBD000473EC /* Results.swift in Sources */,
 				48D90157211F0097000473EC /* ViewController.swift in Sources */,
+				48CC3B2D21316782007A2338 /* Bio.swift in Sources */,
 				48D90187211FD899000473EC /* APIRequests.swift in Sources */,
+				480DFB7E212F481000245479 /* DetailViewController.swift in Sources */,
+				48CC3B2F213167C6007A2338 /* ArtistMatches.swift in Sources */,
 				48D90155211F0097000473EC /* AppDelegate.swift in Sources */,
+				48CC3B2B2131674A007A2338 /* SearchResponse.swift in Sources */,
 				48511069212EA0D800311309 /* ResultsCell.swift in Sources */,
+				48CC3B27213166E0007A2338 /* Artist.swift in Sources */,
+				480DFB80212FDCB700245479 /* Details.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

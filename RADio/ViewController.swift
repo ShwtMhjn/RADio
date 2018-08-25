@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import moa
+import Reachability
 
 class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource, APIRequests{
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var artistResults: UICollectionView!
     @IBOutlet weak var albumResults: UICollectionView!
 
+    let reachability = Reachability()!
+
     let flowLayout = UICollectionViewFlowLayout()
 
     var searchResults: Results?
+
+    var imageSize: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,27 +66,19 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDel
 
     //MARK: SearchBar Delegate Methods
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-        let searchCategory: String = getSearchMethod(scope:scope)
-        if let searchTerm = searchBar.text {
-            self.getSearchResults(for: searchTerm, searchMethod: searchCategory) { (searchResponse) in
-
-                print(searchResponse)
-                        switch searchResponse {
-                        case .success(let response):
-                            self.searchResults = response.results
-                            print(self.searchResults ?? "No Results")
-                            self.artistResults.reloadData()
-                        case .failure(let error):
-                            fatalError("error: \(error.localizedDescription)")
-                        }
-                    }
-                }
+//        reachability.whenReachable = { _ in
+            let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+            let searchCategory: String = self.getSearchMethod(scope:scope)
+            if let searchTerm = searchBar.text {
+                self.makeSearchCall(searchTerm: searchTerm, searchCategory: searchCategory)
+            }
+//        }
+        reachability.whenUnreachable = { _ in
+            print("Not reachable")
         }
+    }
 
     //MARK: CollectionView Callbacks
-
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let itemCount = (self.searchResults?.artistMatches.artist.count) else {
             return 0
@@ -94,15 +92,39 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDel
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : ResultsCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ResultsCell", for: indexPath) as! ResultsCell
-        guard let title  = self.searchResults?.artistMatches.artist[indexPath.row].name else {
-            cell.title.text = "No Title"
-            return cell
+        if let title  = self.searchResults?.artistMatches.artist[indexPath.row].name {
+            cell.title.text = title
+        } else {
+            cell.title.text = "No title"
         }
-        cell.title.text = title
+        if let imageUrl = self.searchResults?.artistMatches.artist[indexPath.row].image[4].text?.absoluteString {
+            print(imageUrl)
+            cell.resultImage.moa.url = imageUrl
+        }
+
+        cell.resultImage.image = UIImage.init(named: "PlaceholderImage.png")
+
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(self.searchResults?.artistMatches.artist[indexPath.row].name ?? "No Name here mayn :/")
+    }
+
     //MARK: Utilities
+    func pickImageSize() {
+        reachability.whenReachable = { reachability in
+            switch reachability.connection {
+            case .cellular:
+                self.imageSize = 3
+            case .wifi:
+                self.imageSize = 4
+            default:
+                self.imageSize = 3
+            }
+        }
+    }
+
     func getSearchMethod(scope: String) -> String {
         var searchCategory: String
         switch scope {
@@ -118,7 +140,23 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDel
             searchCategory = "all"
         }
         print("Search Category: \(searchCategory)")
-        
+
         return searchCategory
     }
+
+
+    func makeSearchCall(searchTerm: String, searchCategory: String) {
+        let request = self.searchRequest(searchString: searchTerm, searchMethod: searchCategory)
+        self.getSearchResults(for: request) { (searchResponse) in
+            switch searchResponse {
+            case .success(let response):
+                self.searchResults = response.results
+                self.pickImageSize()
+                self.artistResults.reloadData()
+            case .failure(let error):
+                fatalError("error: \(error.localizedDescription)")
+            }
+        }
+    }
+
 }

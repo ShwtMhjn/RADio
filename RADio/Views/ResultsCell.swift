@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import moa
 
 class ResultsCell: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var resultImage: UIImageView!
-    
 }
