@@ -12,11 +12,11 @@ import NVActivityIndicatorView
 
 let searchMethod = "Artists"
 
-class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+class ViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var artistResults: UICollectionView!
     @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
-    
+    @IBOutlet weak var message: UILabel!
 
     let flowLayout = UICollectionViewFlowLayout()
 
@@ -27,7 +27,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        searchBar.placeholder = "Search Artist, Album or Track..."
+        searchBar.placeholder = "Which artist are you looking for?"
         searchBar.searchBarStyle = UISearchBarStyle.prominent
         //        searchBar.scopeButtonTitles = ["Album", "Artist", "Tracks", "All"]
         searchBar.delegate = self
@@ -65,6 +65,12 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDel
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        self.activityIndicator.stopAnimating()
+    }
+}
+
+extension ViewController: UISearchBarDelegate {
     //MARK: SearchBar Delegate Methods
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let searchCategory = searchMethod //searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
@@ -74,7 +80,9 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDel
             self.makeSearchCall(searchTerm: searchTerm, searchCategory: searchCategory)
         }
     }
+}
 
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     //MARK: CollectionView Callbacks
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let itemCount: Int = (self.searchResults?.count) else {
@@ -115,21 +123,21 @@ class ViewController: UIViewController, UISearchBarDelegate, UICollectionViewDel
         DataManager().loadArtistDetails(artistName: (artist?.artistName)!, mbid: (artist?.artistMBID)!, searchMethod: searchCategory)
         self.activityIndicator.startAnimating()
     }
+}
 
-    //MARK: Utilities
+extension ViewController {
+    //MARK: External Calls
 
     func makeSearchCall(searchTerm: String, searchCategory: String) {
         DataManager().loadArtistModels(searchString: searchTerm, searchMethod: searchCategory)
+
+        message.isHidden = true
         self.activityIndicator.startAnimating()
     }
 
     func reloadViews<T>(newData: Array<T>) -> Void {
         self.searchResults = newData as? [ArtistModel]
         self.artistResults.reloadData()
-        self.activityIndicator.stopAnimating()
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
         self.activityIndicator.stopAnimating()
     }
 }
