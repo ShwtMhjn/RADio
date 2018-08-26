@@ -1,26 +1,21 @@
 //
-//  APIRequests.swift
+//  DetailsRequest.swift
 //  RADio
 //
-//  Created by Shweta Jagdish Mahajan (Digital) on 12/08/18.
+//  Created by Shweta Jagdish Mahajan (Digital) on 26/08/18.
 //  Copyright © 2018 Shweta Jagdish Mahajan (Digital). All rights reserved.
 //
 
 import Foundation
 
-protocol APIRequests {
-    func getSearchResults(for request: URLRequest,
-                          completion: ((Response<SearchResponse>) -> Void)?)
+protocol DetailsRequest {
+    func getDetails(for request: URLRequest,
+                    completion: ((Response<ArtistDetails>) -> Void)?)
 }
 
-enum Response<Value> {
-    case success(Value)
-    case failure(Error)
-}
-
-extension APIRequests {
-    func getSearchResults(for request: URLRequest,
-                          completion: ((Response<SearchResponse>) -> Void)?) {
+extension DetailsRequest {
+    func getDetails(for request: URLRequest,
+                    completion: ((Response<ArtistDetails>) -> Void)?) {
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         let task = session.dataTask(with: request) { (responseData, response, responseError) in
@@ -33,10 +28,10 @@ extension APIRequests {
                     let decoder = JSONDecoder()
 
                     do {
-                        // Search Results on being decoded from JSON
-                        let searchResults = try decoder.decode(SearchResponse.self, from: jsonData)
-                        print(searchResults)
-                        completion?(.success(searchResults))
+                        // Artist Details on being decoded from JSON
+                        let artistDetails = try decoder.decode(ArtistDetails.self, from: jsonData)
+                        print(artistDetails)
+                        completion?(.success(artistDetails))
                     } catch {
                         completion?(.failure(error))
                     }
@@ -49,14 +44,14 @@ extension APIRequests {
         task.resume()
     }
 
-    func searchRequest(searchString: String, searchMethod: String)->URLRequest {
+    func detailsRequest(artistName: String, mbid: String, searchMethod: String)->URLRequest {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "ws.audioscrobbler.com"
         urlComponents.path = "/2.0/"
 
-        var queryItems = [URLQueryItem(name: "method", value: "\(searchMethod).search")]
-        queryItems.append(URLQueryItem(name: "\(searchMethod)", value: "\(searchString)"))
+        var queryItems = [URLQueryItem(name: "method", value: "\(searchMethod).getinfo")]
+        queryItems.append(URLQueryItem(name: "\(searchMethod)", value: "\(artistName)"))
         queryItems.append(URLQueryItem(name: "api_key", value: "1781e9f5a7307fbbc5a60d0545bf2bd8"))
         queryItems.append(URLQueryItem(name: "format", value: "json"))
 

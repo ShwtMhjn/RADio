@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+class ResultsModel {
+    let resultsArray: [ArtistModel]?
+    init(results: [ArtistModel]) {
+        resultsArray = results
+    }
+}
