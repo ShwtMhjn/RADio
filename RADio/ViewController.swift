@@ -17,12 +17,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var artistResults: UICollectionView!
     @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
     @IBOutlet weak var message: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
 
     let flowLayout = UICollectionViewFlowLayout()
 
     var searchResults: [ArtistModel]?
 
-    var imageSize: Int?
+    var pageNumber: Int = 0 //Page number for the search
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +36,14 @@ class ViewController: UIViewController {
         artistResults.dataSource = self
 
         self.artistResults.register(UINib(nibName: "ResultsCell", bundle: nil), forCellWithReuseIdentifier: "ResultsCell")
-
+        self.artistResults.register(UINib(nibName: "Footer", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "Footer")
         setupCollectionViewLayout()
     }
 
+    @IBAction func nextResults(_ sender: Any) {
+        startSearching()
+    }
+    
     private func setupCollectionViewLayout() {
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.minimumLineSpacing = 0
@@ -70,14 +75,24 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: UIAlertViewDelegate{
+
+}
+
 extension ViewController: UISearchBarDelegate {
     //MARK: SearchBar Delegate Methods
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        pageNumber = 0
+        startSearching()
+    }
+
+    func startSearching() {
         let searchCategory = searchMethod //searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-            //<- This will be used when we dynamically select search category from the search bar.
-            //Hardcoded it for Artist now.
+        //<- This will be used when we dynamically select search category from the search bar.
+        //Hardcoded it for Artist now.
+        pageNumber = pageNumber + 1
         if let searchTerm = searchBar.text {
-            self.makeSearchCall(searchTerm: searchTerm, searchCategory: searchCategory)
+            self.makeSearchCall(searchTerm: searchTerm, searchCategory: searchCategory, pageNumber: pageNumber)
         }
     }
 }
@@ -92,7 +107,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -114,22 +129,31 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let artist = self.searchResults?[indexPath.row]
-        let searchCategory = searchMethod //searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-        //<- This will be used when we dynamically select search category from the search bar.
-        //Hardcoded it for Artist now.
+        switch indexPath.section {
+        case 0:
+            let artist = self.searchResults?[indexPath.row]
+            let searchCategory = searchMethod //searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+            //<- This will be used when we dynamically select search category from the search bar.
+            //Hardcoded it for Artist now.
 
-        print(artist?.artistName ?? "No Name here mayn :/")
-        DataManager().loadArtistDetails(artistName: (artist?.artistName)!, mbid: (artist?.artistMBID)!, searchMethod: searchCategory)
-        self.activityIndicator.startAnimating()
+            print(artist?.artistName ?? "No Name here mayn :/")
+            DataManager().loadArtistDetails(artistName: (artist?.artistName)!, mbid: (artist?.artistMBID)!, searchMethod: searchCategory)
+            self.activityIndicator.startAnimating()
+        default:
+            startSearching()
+        }
     }
 }
 
 extension ViewController {
+
+    func removeActivityIndicator() {
+        self.activityIndicator.stopAnimating()
+    }
     //MARK: External Calls
 
-    func makeSearchCall(searchTerm: String, searchCategory: String) {
-        DataManager().loadArtistModels(searchString: searchTerm, searchMethod: searchCategory)
+    func makeSearchCall(searchTerm: String, searchCategory: String, pageNumber: Int) {
+        DataManager().loadArtistModels(searchString: searchTerm, searchMethod: searchCategory, pageNumber: pageNumber)
 
         message.isHidden = true
         self.activityIndicator.startAnimating()

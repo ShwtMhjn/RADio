@@ -31,24 +31,27 @@ final class DataManager: ArtistDataConverter, ResultsDataConverter, ArtistDetail
     }
 
     func loadArtistModels(searchString: String,
-                          searchMethod: String) {
+                          searchMethod: String,
+                          pageNumber: Int) {
         let searchCategory: String = self.getSearchMethod(scope:searchMethod)
 
-        self.getArtistSearchResults(searchString: searchString, searchMethod: searchCategory) { (artistResponse) in
+        self.getArtistSearchResults(searchString: searchString, searchMethod: searchCategory, pageNumber: pageNumber) { (artistResponse) in
             switch artistResponse {
             case .success(let artists):
                 let artistModels = self.convertResultsToModelArray(results: artists!)!
                 ResultsPresenter().presentResults(results: artistModels)
             case .failure(let error):
-                fatalError("error: \(error.localizedDescription)")
+                AlertsPresenter().presentAlert(title: "Oops!", message: error.localizedDescription)
+//                fatalError("error: \(error.localizedDescription)")
             }
         }
     }
 
     func getArtistSearchResults(searchString: String,
                                 searchMethod: String,
+                                pageNumber: Int,
                                 completion: ((ArtistResponse) -> Void)?) {
-        let request = self.searchRequest(searchString: searchString, searchMethod: searchMethod)
+        let request = self.searchRequest(searchString: searchString, searchMethod: searchMethod, pageNumber: pageNumber)
         var searchResults: [Artist]?
         self.getSearchResults(for: request) { (searchResponse) in
             switch searchResponse {
@@ -56,7 +59,8 @@ final class DataManager: ArtistDataConverter, ResultsDataConverter, ArtistDetail
                 searchResults = response.results?.artistMatches.artist
                 completion?(.success(searchResults))
             case .failure(let error):
-                fatalError("error: \(error.localizedDescription)")
+                AlertsPresenter().presentAlert(title: "Oops!", message: error.localizedDescription)
+//                fatalError("error: \(error.localizedDescription)")
             }
         }
     }
@@ -103,7 +107,8 @@ final class DataManager: ArtistDataConverter, ResultsDataConverter, ArtistDetail
                 let details = self.convertArtistDetailsDataToModel(artistDetails: artistDetails)
                 ResultsPresenter().presentDetails(details: details)
             case .failure(let error):
-                fatalError("error: \(error.localizedDescription)")
+                AlertsPresenter().presentAlert(title: "Oops!", message: error.localizedDescription)
+//                fatalError("error: \(error.localizedDescription)")
             }
         }
     }
@@ -120,7 +125,8 @@ final class DataManager: ArtistDataConverter, ResultsDataConverter, ArtistDetail
                 artistDetails = response
                 completion?(.success(artistDetails))
             case .failure(let error):
-                fatalError("error: \(error.localizedDescription)")
+                AlertsPresenter().presentAlert(title: "Oops!", message: error.localizedDescription)
+                //                fatalError("error: \(error.localizedDescription)")
             }
         }
     }

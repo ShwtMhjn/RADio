@@ -13,6 +13,7 @@ class ResultsPresenter {
         let topMostViewController = UIApplication.shared.topMostViewController()
 
         let viewController: ViewController = topMostViewController as! ViewController
+
         viewController.reloadViews(newData: results)
     }
 
@@ -20,6 +21,7 @@ class ResultsPresenter {
         let topMostViewController = UIApplication.shared.topMostViewController()
 
         let viewController: ViewController = topMostViewController as! ViewController
+        
         let detailViewController: DetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
 
         viewController.present(detailViewController, animated: true, completion: nil)
