@@ -29,6 +29,8 @@
 		48CC3B3F2132A74D007A2338 /* DetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC3B3E2132A74D007A2338 /* DetailsRequest.swift */; };
 		48CC3B412132E37A007A2338 /* ArtistDetailsDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC3B402132E37A007A2338 /* ArtistDetailsDataConverter.swift */; };
 		48CC3B432133C741007A2338 /* AlertsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC3B422133C741007A2338 /* AlertsPresenter.swift */; };
+		48CC3B472134146C007A2338 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC3B462134146C007A2338 /* TestData.swift */; };
+		48CC3B4A2134184C007A2338 /* StringEncodingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC3B492134184C007A2338 /* StringEncodingExtension.swift */; };
 		48D90155211F0097000473EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D90154211F0097000473EC /* AppDelegate.swift */; };
 		48D90157211F0097000473EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D90156211F0097000473EC /* ViewController.swift */; };
 		48D9015A211F0097000473EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D90158211F0097000473EC /* Main.storyboard */; };
@@ -85,6 +87,8 @@
 		48CC3B3E2132A74D007A2338 /* DetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRequest.swift; sourceTree = "<group>"; };
 		48CC3B402132E37A007A2338 /* ArtistDetailsDataConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailsDataConverter.swift; sourceTree = "<group>"; };
 		48CC3B422133C741007A2338 /* AlertsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsPresenter.swift; sourceTree = "<group>"; };
+		48CC3B462134146C007A2338 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		48CC3B492134184C007A2338 /* StringEncodingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEncodingExtension.swift; sourceTree = "<group>"; };
 		48D90151211F0097000473EC /* RADio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RADio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D90154211F0097000473EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48D90156211F0097000473EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +190,14 @@
 			path = Presenters;
 			sourceTree = "<group>";
 		};
+		48CC3B482134183B007A2338 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				48CC3B492134184C007A2338 /* StringEncodingExtension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		48D90148211F0097000473EC = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +223,7 @@
 		48D90153211F0097000473EC /* RADio */ = {
 			isa = PBXGroup;
 			children = (
+				48CC3B482134183B007A2338 /* Helpers */,
 				48CC3B3B21328B60007A2338 /* Presenters */,
 				48CC3B322131BDF7007A2338 /* Logic */,
 				48CC3B2121316510007A2338 /* Models */,
@@ -235,6 +248,7 @@
 				483E29E5212AF71100D6B22B /* JSONMappingTests.swift */,
 				48D9016B211F0097000473EC /* Info.plist */,
 				48108BD8212D9319008E1968 /* ArtistResultsJSON.json */,
+				48CC3B462134146C007A2338 /* TestData.swift */,
 			);
 			path = RADioTests;
 			sourceTree = "<group>";
@@ -507,6 +521,7 @@
 				48CC3B232131652F007A2338 /* ResultsModel.swift in Sources */,
 				48CC3B292131670D007A2338 /* Stats.swift in Sources */,
 				48CC3B25213166BE007A2338 /* Image.swift in Sources */,
+				48CC3B4A2134184C007A2338 /* StringEncodingExtension.swift in Sources */,
 				48D90184211FCEBD000473EC /* Results.swift in Sources */,
 				48CC3B412132E37A007A2338 /* ArtistDetailsDataConverter.swift in Sources */,
 				48D90157211F0097000473EC /* ViewController.swift in Sources */,
@@ -534,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48CC3B472134146C007A2338 /* TestData.swift in Sources */,
 				483E29E6212AF71100D6B22B /* JSONMappingTests.swift in Sources */,
 				48D9016A211F0097000473EC /* RADioTests.swift in Sources */,
 			);
