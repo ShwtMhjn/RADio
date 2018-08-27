@@ -35,6 +35,8 @@ class ViewController: UIViewController {
         artistResults.delegate = self
         artistResults.dataSource = self
 
+        nextButton.isHidden = true
+
         self.artistResults.register(UINib(nibName: "ResultsCell", bundle: nil), forCellWithReuseIdentifier: "ResultsCell")
         self.artistResults.register(UINib(nibName: "Footer", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "Footer")
         setupCollectionViewLayout()
@@ -162,7 +164,9 @@ extension ViewController {
     func reloadViews<T>(newData: Array<T>) -> Void {
         self.searchResults = newData as? [ArtistModel]
         self.artistResults.reloadData()
+        self.artistResults.scrollToItem(at: IndexPath(item: 0, section: 0), at: UICollectionViewScrollPosition.top, animated: true)
         self.activityIndicator.stopAnimating()
+        nextButton.isHidden = false
     }
 }
 
