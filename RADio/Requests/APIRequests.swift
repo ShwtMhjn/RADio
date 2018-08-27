@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol APIRequests {
+protocol APIRequests: Utilities {
     func getSearchResults(for request: URLRequest,
                           completion: ((Response<SearchResponse>) -> Void)?)
 }
@@ -58,7 +58,7 @@ extension APIRequests {
         var queryItems = [URLQueryItem(name: "method", value: "\(searchMethod).search")]
         queryItems.append(URLQueryItem(name: "\(searchMethod)", value: "\(searchString)"))
         queryItems.append(URLQueryItem(name: "page", value: "\(pageNumber)"))
-        queryItems.append(URLQueryItem(name: "api_key", value: "1781e9f5a7307fbbc5a60d0545bf2bd8"))
+        queryItems.append(URLQueryItem(name: "api_key", value: "\(api_key())"))
         queryItems.append(URLQueryItem(name: "format", value: "json"))
 
         urlComponents.queryItems = queryItems

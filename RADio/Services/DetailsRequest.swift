@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol DetailsRequest {
+protocol DetailsRequest: Utilities {
     func getDetails(for request: URLRequest,
                     completion: ((Response<ArtistDetails>) -> Void)?)
 }
@@ -52,7 +52,7 @@ extension DetailsRequest {
 
         var queryItems = [URLQueryItem(name: "method", value: "\(searchMethod).getinfo")]
         queryItems.append(URLQueryItem(name: "\(searchMethod)", value: "\(artistName)"))
-        queryItems.append(URLQueryItem(name: "api_key", value: "1781e9f5a7307fbbc5a60d0545bf2bd8"))
+        queryItems.append(URLQueryItem(name: "api_key", value: "\(api_key())")) //"1781e9f5a7307fbbc5a60d0545bf2bd8"))
         queryItems.append(URLQueryItem(name: "format", value: "json"))
 
         urlComponents.queryItems = queryItems
@@ -65,6 +65,8 @@ extension DetailsRequest {
 
         return request
     }
+
+
 }
 
 

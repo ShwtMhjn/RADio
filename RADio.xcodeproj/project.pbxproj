@@ -10,6 +10,7 @@
 		480DFB7E212F481000245479 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480DFB7D212F481000245479 /* DetailViewController.swift */; };
 		480DFB80212FDCB700245479 /* ArtistDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480DFB7F212FDCB700245479 /* ArtistDetails.swift */; };
 		48108BD9212D9319008E1968 /* ArtistResultsJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 48108BD8212D9319008E1968 /* ArtistResultsJSON.json */; };
+		48233E8F21343049004841E9 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48233E8E21343049004841E9 /* Utilities.swift */; };
 		483E29E6212AF71100D6B22B /* JSONMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E29E5212AF71100D6B22B /* JSONMappingTests.swift */; };
 		48511065212E9D8000311309 /* ResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48511064212E9D8000311309 /* ResultsCell.xib */; };
 		48511069212EA0D800311309 /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48511068212EA0D800311309 /* ResultsCell.swift */; };
@@ -31,6 +32,7 @@
 		48CC3B432133C741007A2338 /* AlertsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC3B422133C741007A2338 /* AlertsPresenter.swift */; };
 		48CC3B472134146C007A2338 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC3B462134146C007A2338 /* TestData.swift */; };
 		48CC3B4A2134184C007A2338 /* StringEncodingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC3B492134184C007A2338 /* StringEncodingExtension.swift */; };
+		48CC3B4C21342BF3007A2338 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48CC3B4B21342BF3007A2338 /* Configuration.plist */; };
 		48D90155211F0097000473EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D90154211F0097000473EC /* AppDelegate.swift */; };
 		48D90157211F0097000473EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D90156211F0097000473EC /* ViewController.swift */; };
 		48D9015A211F0097000473EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D90158211F0097000473EC /* Main.storyboard */; };
@@ -68,6 +70,8 @@
 		480DFB7D212F481000245479 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		480DFB7F212FDCB700245479 /* ArtistDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetails.swift; sourceTree = "<group>"; };
 		48108BD8212D9319008E1968 /* ArtistResultsJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ArtistResultsJSON.json; sourceTree = "<group>"; };
+		48233E8D21342FD5004841E9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		48233E8E21343049004841E9 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		483E29E5212AF71100D6B22B /* JSONMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMappingTests.swift; sourceTree = "<group>"; };
 		48511064212E9D8000311309 /* ResultsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsCell.xib; sourceTree = "<group>"; };
 		48511068212EA0D800311309 /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 		48CC3B422133C741007A2338 /* AlertsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsPresenter.swift; sourceTree = "<group>"; };
 		48CC3B462134146C007A2338 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		48CC3B492134184C007A2338 /* StringEncodingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEncodingExtension.swift; sourceTree = "<group>"; };
+		48CC3B4B21342BF3007A2338 /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		48D90151211F0097000473EC /* RADio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RADio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D90154211F0097000473EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48D90156211F0097000473EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -194,13 +199,33 @@
 			isa = PBXGroup;
 			children = (
 				48CC3B492134184C007A2338 /* StringEncodingExtension.swift */,
+				48233E8E21343049004841E9 /* Utilities.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		48CC3B4D21342C04007A2338 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				48D90156211F0097000473EC /* ViewController.swift */,
+				480DFB7D212F481000245479 /* DetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		48CC3B4E21342C2A007A2338 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				48D90158211F0097000473EC /* Main.storyboard */,
+				48D9015D211F0097000473EC /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
 			sourceTree = "<group>";
 		};
 		48D90148211F0097000473EC = {
 			isa = PBXGroup;
 			children = (
+				48233E8D21342FD5004841E9 /* README.md */,
 				48D90153211F0097000473EC /* RADio */,
 				48D90168211F0097000473EC /* RADioTests */,
 				48D90173211F0097000473EC /* RADioUITests */,
@@ -223,6 +248,7 @@
 		48D90153211F0097000473EC /* RADio */ = {
 			isa = PBXGroup;
 			children = (
+				48D90154211F0097000473EC /* AppDelegate.swift */,
 				48CC3B482134183B007A2338 /* Helpers */,
 				48CC3B3B21328B60007A2338 /* Presenters */,
 				48CC3B322131BDF7007A2338 /* Logic */,
@@ -230,12 +256,10 @@
 				48511063212E9D1000311309 /* Views */,
 				48D90185211FD74E000473EC /* Services */,
 				48D90182211FCBC2000473EC /* Entities */,
-				48D90154211F0097000473EC /* AppDelegate.swift */,
-				48D90156211F0097000473EC /* ViewController.swift */,
-				480DFB7D212F481000245479 /* DetailViewController.swift */,
-				48D90158211F0097000473EC /* Main.storyboard */,
+				48CC3B4D21342C04007A2338 /* ViewControllers */,
+				48CC3B4E21342C2A007A2338 /* StoryBoards */,
 				48D9015B211F0097000473EC /* Assets.xcassets */,
-				48D9015D211F0097000473EC /* LaunchScreen.storyboard */,
+				48CC3B4B21342BF3007A2338 /* Configuration.plist */,
 				48D90160211F0097000473EC /* Info.plist */,
 			);
 			path = RADio;
@@ -411,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48D9015F211F0097000473EC /* LaunchScreen.storyboard in Resources */,
+				48CC3B4C21342BF3007A2338 /* Configuration.plist in Resources */,
 				48D9015C211F0097000473EC /* Assets.xcassets in Resources */,
 				48511065212E9D8000311309 /* ResultsCell.xib in Resources */,
 				48D9015A211F0097000473EC /* Main.storyboard in Resources */,
@@ -541,6 +566,7 @@
 				48511069212EA0D800311309 /* ResultsCell.swift in Sources */,
 				48CC3B342131BF32007A2338 /* ArtistDataConverter.swift in Sources */,
 				48CC3B27213166E0007A2338 /* Artist.swift in Sources */,
+				48233E8F21343049004841E9 /* Utilities.swift in Sources */,
 				480DFB80212FDCB700245479 /* ArtistDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
