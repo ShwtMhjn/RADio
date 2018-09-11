@@ -9,7 +9,7 @@ The App shows the first 30 results when you search. These are ranked in the dece
 
 ### Cocoapods ###
 
-Install Cocoapods if need be.
+Install Cocoapods if need be. Navigate to the project path on the terminal. Then, run...
 
 `$ gem install cocoapods`
 

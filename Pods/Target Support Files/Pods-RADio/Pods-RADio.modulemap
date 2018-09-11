@@ -1,0 +1,6 @@
+framework module Pods_RADio {
+  umbrella header "Pods-RADio-umbrella.h"
+
+  export *
+  module * { export * }
+}
