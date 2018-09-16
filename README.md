@@ -9,7 +9,9 @@ The App shows the first 30 results when you search. These are ranked in the dece
 
 ### Cocoapods ###
 
-Install Cocoapods if need be. Navigate to the project path on the terminal. Then, run...
+Install Cocoapods if only if need be. The Pods are checked in so that you are able to run it without installing cocoapods if you don't want to/can't. 
+
+Navigate to the project path on the terminal. Then, run...
 
 `$ gem install cocoapods`
 
